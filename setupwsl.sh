@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# $SHELL -c "$(wget https://raw.githubusercontent.com/joebone/UtilScripts/main/setupwsl.sh -O -)"
+
 windowsUser=$1
 
 if ["$SHELL" = "/bin/bash"];
