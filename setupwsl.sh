@@ -4,15 +4,18 @@
 
 windowsUser=$1
 
-if ["$SHELL" = "/bin/bash"];
+if ["$SHELL" = "/bin/bash"]; then
   UPDATE_CMD='apt update'
   UPGRADE_CMD='apt -y upgrade'
   CLEAN_CMD='apt -y autoclean'
-elif ["$SHELL" -eq "/bin/ash"];
+elif ["$SHELL" -eq "/bin/ash"]; then
   # alpine
   UPDATE_CMD='apt update'
   UPGRADE_CMD='apt -y upgrade'
   CLEAN_CMD='apt -y autoclean'
+else
+  echo 'Unsupported shell';
+  exit 1
 fi
 
 
